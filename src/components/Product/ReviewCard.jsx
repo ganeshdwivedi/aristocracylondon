@@ -63,7 +63,7 @@ const ReviewCard = ({ params, type }) => {
             {product?.map(product =>
                 <div className='xl:px-[8%] pt-10 2xl:px-[10%] px-[25px] flex flex-col lg:flex-row gap-x-10'>
                     <div className='flex flex-col'>
-                        <div className='flex flex-col lg:flex-row gap-x-5'>
+                        <div className='flex flex-col md:flex-row gap-x-5'>
                             <div className='lg:w-[30vw] w-full overflow-hidden'>
                                 <div className='lg:w-[30vw] w-full overflow-hidden'>
                                     <img className='w-full h-ful object-cover object-center' src={urlFor(thumbnail ? thumbnail : product.images[0])} alt='' />
