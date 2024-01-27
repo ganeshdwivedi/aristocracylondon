@@ -27,7 +27,7 @@ function Navbar() {
     return (
         <>
             <nav className="relative">
-                <div className={isSticky ? 'fixed bg-[#0a1a3c] flex  shadow-md  w-full z-[60] flex-row justify-between xl:px-[8%] 2xl:px-[10%] items-center py-2 px-[25px]' : 'flex bg-[#0a1a3c] shadow-md  w-full z-[60] flex-row justify-between xl:px-[8%] 2xl:px-[10%] items-center lg:py-0 py-5 px-[25px]'}>
+                <div className={isSticky ? 'fixed bg-[#0a1a3c] flex  shadow-md  w-full z-[60] flex-row justify-between xl:px-[8%] 2xl:px-[10%] items-center md:py-0 py-2 px-[25px]' : 'flex bg-[#0a1a3c] shadow-md  w-full z-[60] flex-row justify-between xl:px-[8%] 2xl:px-[10%] items-center  py-3 px-[25px]'}>
                     <Link href={"/"}>
                         <Logo className={"md:h-[60px] md:w-full w-36"} />
                     </Link>

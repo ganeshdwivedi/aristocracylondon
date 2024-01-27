@@ -12,14 +12,14 @@ import { client } from '../../../sanity';
 import urlFor from '../../../ImgUrl';
 
 const BlogSlider = () => {
-    // const [swiperRef, setSwiperRef] = useState(null);
+    const [swiperRef, setSwiperRef] = useState(null);
 
-    // const prevHandler = () => {
-    //     swiperRef.slidePrev();
-    // };
-    // const nextHandler = () => {
-    //     swiperRef.slideNext();
-    // };
+    const prevHandler = () => {
+        swiperRef.slidePrev();
+    };
+    const nextHandler = () => {
+        swiperRef.slideNext();
+    };
 
     const [product, setProduct] = useState([])
 
@@ -38,15 +38,18 @@ const BlogSlider = () => {
         sanityGet()
     }, [])
     return (
-        <div className='xl:px-[8%] 2xl:px-[10%] px-[25px] relative'>
-            {/* <div className='absolute flex flex-row justify-center -top-10 lg:gap-x-[90vw] xl:gap-x-[75vw]'>
-                <div onClick={prevHandler} className='hover:text-white transition-colors ease-linear bg-white p-1 hover:bg-black'>
+        <div className='relative BlogSLIDER py-10'>
+            <div className='my-5'>
+                <h3 className='text-white text-center text-[20px] heading'>The Gentlemen's Blog</h3>
+            </div>
+            <div className='flex flex-row justify-between BlogSLIDERNAV'>
+                <div onClick={prevHandler} className='hover:text-white transition-colors absolute top-8 left-0 ease-linear previousbutton bg-white p-1 hover:bg-black'>
                     <KeyboardArrowLeftIcon />
                 </div>
-                <div onClick={nextHandler} className='hover:text-white transition-colors ease-linear bg-white p-1 hover:bg-black'>
+                <div onClick={nextHandler} className='hover:text-white transition-colors ease-linear absolute top-8 right-0 bg-white p-1 hover:bg-black'>
                     <KeyboardArrowRightIcon />
                 </div>
-            </div> */}
+            </div>
             <Swiper
                 breakpoints={{
                     300: {
@@ -67,14 +70,13 @@ const BlogSlider = () => {
                     }
                 }}
                 slidesPerView={3}
-                spaceBetween={10}
+                spaceBetween={60}
                 loop={true}
-                navigation={true}
                 autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
                 }}
-                // onSwiper={(swiper) => setSwiperRef(swiper)}
+                onSwiper={(swiper) => setSwiperRef(swiper)}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="BlogSwipper"
             >

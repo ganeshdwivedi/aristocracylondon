@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Hero = () => {
+
     return (
         <div className='w-[133%] shadow-xl md:shadow-2xl shadow-black -left-[17%] h-[300px] md:h-[40vh] lg:h-[80vh] xl:h-[100vh] relative overflow-hidden'>
-            <iframe className='scale-125' width={"100%"} height={"100%"} src="https://www.youtube.com/embed/mwkwOrZDGRk?autoplay=1&mute=1&loop=1&playlist=mwkwOrZDGRk&loop=1controls=0&modestbranding=1&rel=0" allowFullScreen>
+            <iframe className='scale-125' width={"100%"} height={"100%"} src="https://www.youtube.com/embed/mwkwOrZDGRk?autoplay=1&mute=1&loop=1&playlist=mwkwOrZDGRk&loop=1controls=0&modestbranding=1&rel=0&vq=hd1080" allowFullScreen>
             </iframe>
 
             <div className='absolute inset-0 w-full  md:h-[50vh] xl:h-[120vh]'>

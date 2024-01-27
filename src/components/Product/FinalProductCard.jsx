@@ -43,12 +43,12 @@ const FinalProductCard = ({ type, category, link }) => {
     }, [])
 
     return (
-        <div className='my-20 relative'>
-            <div className='absolute flex flex-row justify-center -top-10 gap-x-[75vw]'>
-                <div onClick={prevHandler} className='hover:text-white transition-colors ease-linear bg-white p-1 hover:bg-black'>
+        <div className='py-10 relative BlogSLIDER'>
+            <div className='flex flex-row justify-between BlogSLIDERNAV'>
+                <div onClick={prevHandler} className='hover:text-white transition-colors absolute -top-5 left-0 ease-linear previousbutton border border-black bg-white p-1 hover:bg-black'>
                     <KeyboardArrowLeftIcon />
                 </div>
-                <div onClick={nextHandler} className='hover:text-white transition-colors ease-linear bg-white p-1 hover:bg-black'>
+                <div onClick={nextHandler} className='hover:text-white transition-colors ease-linear border border-black absolute -top-5 right-0 bg-white p-1 hover:bg-black'>
                     <KeyboardArrowRightIcon />
                 </div>
             </div>
@@ -73,7 +73,7 @@ const FinalProductCard = ({ type, category, link }) => {
                         }
                     }}
                     slidesPerView={3}
-                    spaceBetween={10}
+                    spaceBetween={50}
                     loop={true}
                     autoplay={{
                         delay: 3000,

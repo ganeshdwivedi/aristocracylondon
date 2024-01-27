@@ -97,11 +97,6 @@ font-weight: 400;
  display: none;
 }
 
-.BlogSwipper .swiper-button-prev, .BlogSwipper .swiper-button-next{
-    top:0;
-    position: absolute;
-    z-index: 5;
-}
 
 .text-center {
     text-align: center;
@@ -212,4 +207,14 @@ h2 {
     justify-items: start;
 
 }
+}
+
+.BlogSLIDER .BlogSLIDERNAV{
+    display: none;
+}
+.BlogSLIDER:hover .BlogSLIDERNAV {
+    display: flex;
+}
+.BlogSLIDER .BlogSLIDERNAV:hover {
+    display: flex;
 }

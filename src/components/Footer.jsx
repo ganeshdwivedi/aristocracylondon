@@ -6,11 +6,11 @@ import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 const Footer = () => {
 
-    const footerLinkCss = 'transition-all ease-linear  hover:relative hover:left-1 text-[15px] my-3 text-slate-500'
+    const footerLinkCss = 'transition-all ease-linear cursor-pointer  hover:relative hover:left-1 text-[15px] my-3 text-slate-500'
     return (
         <div className='flex bg-white flex-col xl:px-[8%] 2xl:px-[10%] px-[25px] py-[50px]'>
             <div className='grid md:grid-cols-3 lg:grid-cols-5 place-items-center'>
-                <div>
+                <div className='text-center md:text-left my-5 md:my-0'>
                     <h3 className='text-[18px] mb-5'>Awards</h3>
                     <div className='grid grid-cols-3 gap-x-2'> <img src='https://www.aristocracy.london/wp-content/uploads/2024/01/London-Design-Awards-2023.png' alt='London award' />
                         <img src='https://www.aristocracy.london/wp-content/uploads/2024/01/London-Design-Awards-2023.png' alt='london award' />
@@ -19,7 +19,7 @@ const Footer = () => {
                         <h3 className='text-[15px] font-medium text-slate-500'>Interior Design:<span className='font-[400]'>Retails, Shops, Department Stores & Mall</span></h3>
                         <h3 className='text-[15px] font-medium text-slate-500'>Packaging Design:<span className='font-[400]'>Fashion, Apparel & Accessories</span></h3> </div>
                 </div>
-                <div>
+                <div className='text-center md:text-left my-5 md:my-0'>
                     <h3 className='text-[18px] mb-5'>Shop</h3>
                     <ul className=''>
                         <li className={footerLinkCss}>Wedding Suits</li>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <li className={footerLinkCss}>Men's Suits</li>
                     </ul>
                 </div>
-                <div>
+                <div className='text-center md:text-left my-5 md:my-0'>
                     <h3 className='text-[18px] mb-5'>Help</h3>
                     <ul>
                         <li className={footerLinkCss}>Size Guide</li>
@@ -43,7 +43,7 @@ const Footer = () => {
                         <li className={footerLinkCss}>Careers</li>
                     </ul>
                 </div>
-                <div>
+                <div className='text-center md:text-left my-5 md:my-0'>
                     <h3 className='text-[18px]  mb-5'>Legal</h3>
                     <ul>
                         <li className={footerLinkCss}>Terms & Conditions </li>
@@ -55,7 +55,7 @@ const Footer = () => {
                         <li className={footerLinkCss}> Alterations Policy</li>
                     </ul>
                 </div>
-                <div>
+                <div className='text-center md:text-left my-5 md:my-0'>
                     <h3 className='text-[18px] mb-5'>Contact</h3>
                     <div>
                         <div className='flex flex-row items-center gap-x-5'>

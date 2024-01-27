@@ -45,11 +45,11 @@ const page = () => {
             </div>
             <div className='mt-10'>
                 <h3 className='text-[22px]'>Shopping Cart</h3>
-                <div className='flex flex-row justify-between mt-5'>
+                <div className='flex flex-col md:flex-row justify-between mt-5'>
                     <p className='text-[14px] text-[#4d4d4d]'>Your items aren't reserved yet, checkout before they sell out!</p>
-                    <div className='flex flex-row gap-x-10'>
-                        <Link href={"/products"} className='capitalize text-[14px] bg-white text-[#0a1a3c] px-9 py-2 border border-[#0a1a3c] transition-colors ease-linear hover:text-white hover:bg-[#0a1a3c]'>Continue Shopping</Link>
-                        <button onClick={handleCheckout} className='capitalize text-[14px] border-[#0a1a3c] border hover:border-[#d4bb59] bg-[#0a1a3c] text-white px-9 py-2 transition-colors ease-linear hover:bg-[#d4bb59]'>Checkout</button>
+                    <div className='flex flex-row gap-x-3 md:mt-0 mt-5 md:gap-x-10'>
+                        <Link href={"/products"} className='capitalize text-[14px] bg-white text-[#0a1a3c] px-4 md:px-9 py-2 border border-[#0a1a3c] transition-colors ease-linear hover:text-white hover:bg-[#0a1a3c]'>Continue Shopping</Link>
+                        <button onClick={handleCheckout} className='capitalize text-[14px] border-[#0a1a3c] border hover:border-[#d4bb59] bg-[#0a1a3c] text-white px-4 md:px-9 py-2 transition-colors ease-linear hover:bg-[#d4bb59]'>Checkout</button>
                     </div>
                 </div>
                 <div className='my-10'>
