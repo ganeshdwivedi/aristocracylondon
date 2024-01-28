@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import BlogCard from './BlogCard';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -72,12 +72,8 @@ const BlogSlider = () => {
                 slidesPerView={3}
                 spaceBetween={60}
                 loop={true}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
                 onSwiper={(swiper) => setSwiperRef(swiper)}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Pagination, Navigation]}
                 className="BlogSwipper"
             >
                 {product.map((item) => <SwiperSlide key={item._id}><BlogCard imgsrc={urlFor(item.images[0])} title={item.title} slug={item.slug.current} description={item.description} /> </SwiperSlide>)}

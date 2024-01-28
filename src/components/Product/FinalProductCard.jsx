@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
@@ -73,14 +73,10 @@ const FinalProductCard = ({ type, category, link }) => {
                         }
                     }}
                     slidesPerView={3}
-                    spaceBetween={50}
+                    spaceBetween={70}
                     loop={true}
-                    autoplay={{
-                        delay: 3000,
-                        disableOnInteraction: false,
-                    }}
                     onSwiper={(swiper) => setSwiperRef(swiper)}
-                    modules={[Autoplay, Pagination, Navigation]}
+                    modules={[Pagination, Navigation]}
                     className="CareerSwiper"
                 >
 

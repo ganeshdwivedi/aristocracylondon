@@ -8,12 +8,10 @@ const MY_URL = "http://localhost:3000/"
 
 export async function POST(req) {
     const CompleteProduct = await req.json();
-    console.log(CompleteProduct)
 
     const FinalData = CompleteProduct.map((item) => {
         const image = item.images[0];
         const img = image.asset._ref;
-        console.log(image)
         const newImage = img.replace('image-', 'https://cdn.sanity.io/images/4fxtm919/production/').replace('-jpg', '.jpg');
         console.log("NEWIMAGE" + newImage)
         return {
@@ -28,9 +26,6 @@ export async function POST(req) {
             quantity: 1
         }
     })
-
-
-    console.log("final:", FinalData)
 
 
     if (req.method === 'POST') {

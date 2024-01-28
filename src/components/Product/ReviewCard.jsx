@@ -30,7 +30,6 @@ const ReviewCard = ({ params, type }) => {
         setProduct(products)
         setImages(products[0].images)
     }
-    console.log(product[0]?.category)
     useEffect(() => {
         sanityGet()
     }, [])
@@ -38,7 +37,9 @@ const ReviewCard = ({ params, type }) => {
     const AddToCart = (product) => {
         dispatch(addToCart(product))
         toast.success("product added successfully");
-        localStorage.setItem("cartList", [JSON.stringify(product)])
+        const before = JSON.parse(localStorage.getItem('cartList')) || [];
+        before.push(product);
+        localStorage.setItem('cartList', JSON.stringify(before));
     }
 
     const handleCheckout = async () => {
@@ -52,9 +53,7 @@ const ReviewCard = ({ params, type }) => {
         })
         if (response.statusCode === 500) return;
         toast.loading('...redirecting')
-        console.log(stripe)
         const data = await response.json();
-        console.log(data.session.id)
         stripe.redirectToCheckout({ sessionId: data.session.id })
     }
 

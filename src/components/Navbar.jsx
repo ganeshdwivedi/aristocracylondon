@@ -4,7 +4,6 @@ import Logo from "@/assets/Logo";
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from "next/link";
-import SearchIcon from "@/assets/SearchIcon";
 import SearchIc from "@/assets/SearchIcon";
 import CartIcon from "@/assets/CartIcon";
 
@@ -17,6 +16,7 @@ function Navbar() {
     useEffect(() => {
         const handleIsSticky = () => window.scrollY >= 50 ? setIsSticky(true) : setIsSticky(false);
         window.addEventListener('scroll', handleIsSticky);
+        console.log(localStorage.getItem('cartList'))
     }, [isSticky])
 
     const navlinkcss =
@@ -126,7 +126,7 @@ function Navbar() {
                                 The Fashion House
                                 <div className="absolute NAVFASHIONInner z-[5] shadow-md overflow-hidden bg-white  flex-col top-[102px] p-5 w-[200px] h-[100px] inset-0">
                                     <p className={`${listcss} hover:bg-slate-100`}>Our Story</p>
-                                    <Link href={"/blogs"} className={`${listcss} hover:bg-slate-100`}>The Gentlemen's Blog</Link>
+                                    <Link href={"/blog"} className={`${listcss} hover:bg-slate-100`}>The Gentlemen's Blog</Link>
                                 </div>
                             </li>
                             <li className={`${navlinkcss}`}>

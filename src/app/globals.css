@@ -15,14 +15,7 @@
     width: 11px;
     height: 11px;
 }
-.OurSuitsTravel{
-    font-size: 14px;
-    color: rgb(24, 24, 24);
-}
-.OurSuitsTravel::before{
-    content: '✅';
-    margin: 5px;
-}
+
 .react-datepicker .react-datepicker__navigation.react-datepicker__navigation--previous{
 margin: 10px;
 }

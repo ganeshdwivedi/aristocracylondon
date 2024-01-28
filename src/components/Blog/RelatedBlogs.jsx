@@ -16,7 +16,6 @@ const RelatedBlogs = ({ id }) => {
                 _id,
               }`;
         const products = await client.fetch(query);
-        console.log(products)
         setProduct(products)
     }
     useEffect(() => {

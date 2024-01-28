@@ -3,7 +3,7 @@ import React from 'react'
 const SideBar = () => {
     const listcss = "text-[14px] text-[#5f5f5f] cursor-pointer"
     return (
-        <div className='max-w-[20vw] md:block hidden'>
+        <div className='w-[16vw] md:block hidden'>
             <div className='flex flex-col'>
                 <h3 className='text-[20px] font-medium'>Suits</h3>
                 <ul className='flex flex-col gap-y-2 mt-5'>

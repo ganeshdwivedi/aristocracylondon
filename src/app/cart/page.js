@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart } from '@/redux/CartSlice'
 import urlFor from '../../../ImgUrl'
@@ -9,14 +9,19 @@ import Link from 'next/link'
 
 const page = () => {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart)
+    // const cartItems = useSelector((state) => state.cart)
+    const [cartItems, setCartItems] = useState([])
     const RemoveFromCart = (id) => {
-        dispatch(removeFromCart(id))
+        console.log("milgyi" + id)
+        const cartITEM = JSON.parse(localStorage.getItem('cartList'));
+        const updatedCartItems = cartITEM.filter(item => item._id !== id);
+        localStorage.setItem('cartList', JSON.stringify(updatedCartItems));
     }
     useEffect(() => {
-        console.log(localStorage.getItem("cartList"))
-    }, [])
-
+        const existingCartItemsJSON = localStorage.getItem('cartList');
+        const existingCartItems = existingCartItemsJSON ? JSON.parse(existingCartItemsJSON) : [];
+        setCartItems(existingCartItems)
+    }, [cartItems])
 
     const handleCheckout = async () => {
         const stripe = await getStripe();
@@ -29,9 +34,7 @@ const page = () => {
         })
         if (response.statusCode === 500) return;
         toast.loading('...redirecting')
-        console.log(stripe)
         const data = await response.json();
-        console.log(data.session.id)
         stripe.redirectToCheckout({ sessionId: data.session.id })
     }
 
@@ -73,10 +76,10 @@ const page = () => {
                                 <tbody className='flex items-center flex-row justify-between border'>
                                     <tr>
                                         <div className='grid grid-cols-2'>
-                                            <img className='w-20' src={urlFor(item.images[0])} alt={item.title} />
+                                            <img className='w-20' src={urlFor(item?.images[0])} alt={item?.title} />
                                             <div>
-                                                <p className='text-[14px]'>{item.title}</p>
-                                                <button onClick={() => RemoveFromCart(item._id)}>Remove Item</button>
+                                                <p className='text-[14px]'>{item?.title}</p>
+                                                <button onClick={() => RemoveFromCart(item?._id)}>Remove Item</button>
                                             </div>
                                         </div>
                                     </tr>

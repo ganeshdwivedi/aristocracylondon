@@ -1,5 +1,6 @@
 import React from 'react'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import { FaCheckCircle } from "react-icons/fa";
 
 const OurSuitsInTravels = () => {
     return (
@@ -16,9 +17,9 @@ const OurSuitsInTravels = () => {
                 <div className='md:w-[28vw] lg:w-[23vw] xl:w-[20vw]'>
                     <p className='text-[14px] text-slate-600 '>Every suit comes with three carefully curated complimentaries. These aren’t just our way of thanking you for your custom; each one of our gifts will help you maintain the look and feel of your suit for longer.</p>
                     <ul className='mt-[20px]'>
-                        <li className='OurSuitsTravel'>Stylish Suit Packaging</li>
-                        <li className='OurSuitsTravel'>Free Signature Suit Bag</li>
-                        <li className='OurSuitsTravel'>Free Luxury Suit Hanger</li>
+                        <li className='text-sm flex flex-row items-center gap-1'><FaCheckCircle className='text-slate-700' /> Stylish Suit Packaging</li>
+                        <li className='text-sm flex flex-row items-center gap-1'><FaCheckCircle className='text-slate-700' />Free Signature Suit Bag</li>
+                        <li className='text-sm flex flex-row items-center gap-1'><FaCheckCircle className='text-slate-700' />Free Luxury Suit Hanger</li>
                     </ul>
                     <button className='mt-[20px] text-[14px] underline underline-offset-8 decoration-[#d4bb59] hover:text-[#d4bb59]'>View Order Complimentaries {">>"}</button>
                 </div>

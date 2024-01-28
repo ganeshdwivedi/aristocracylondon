@@ -22,10 +22,8 @@ const page = ({ params }) => {
                 _id,
               }`;
         const products = await client.fetch(query);
-        console.log(products)
         setProduct(products)
     }
-    console.log(product)
     useEffect(() => {
         sanityGet()
     }, [])

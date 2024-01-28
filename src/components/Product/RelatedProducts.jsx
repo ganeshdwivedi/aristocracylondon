@@ -6,9 +6,7 @@ import Link from 'next/link'
 
 const RelatedProducts = ({ id, type, category }) => {
     const [product, setProduct] = useState([])
-    console.log(category + "from")
     const categ = category ? `&& category == "${category}"` : ""
-    console.log(categ)
     const sanityGet = async () => {
         const query = `*[_type == "${type}" ${categ} && _id != "${id}"]{
                 title,
@@ -21,7 +19,6 @@ const RelatedProducts = ({ id, type, category }) => {
                 _id,
               }`;
         const products = await client.fetch(query);
-        console.log(products)
         setProduct(products)
     }
     useEffect(() => {
