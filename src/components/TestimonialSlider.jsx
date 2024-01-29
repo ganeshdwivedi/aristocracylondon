@@ -51,10 +51,10 @@ const TestimonialSlider = () => {
                 {Data.map((item, index) =>
                     <SwiperSlide key={index}>
                         <div className='grid bg-white  place-items-center grid-cols-1'>
-                            <div className='w-36 h-36 -mb-[60px] bg-white z-20 border-white border-[10px] overflow-hidden rounded-full'>
+                            <div className='w-36 h-36  -mb-[60px] bg-white z-20 border-white border-[10px] overflow-hidden rounded-full'>
                                 <img className='w-full h-full object-cover' src='https://www.aristocracy.london/wp-content/uploads/2023/04/Mayfair-3-Piece-Navy-Tuxedo-11.jpg' alt='' />
                             </div>
-                            <div className='bg-[#0a1a3c] xl:px-[18%] 2xl:px-[20%] py-[100px] flex flex-col items-center'>
+                            <div className='bg-[#0a1a3c] px-[25px] xl:px-[18%] 2xl:px-[20%] py-[100px] flex flex-col items-center'>
                                 <h3 className='text-[24px]'>{item.name}</h3>
                                 <p className='text-[#d0d070] text-[28px]'>&#9733;&#9733;&#9733;&#9733;&#9733; </p>
                                 <p className='text-center text-[14px] mt-[20px]'>{item.description}</p>
