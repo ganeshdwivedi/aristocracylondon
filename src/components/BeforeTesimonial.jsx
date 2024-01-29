@@ -5,7 +5,7 @@ import { FaRegMoneyBillAlt } from "react-icons/fa";
 
 const BeforeTesimonial = () => {
     return (
-        <div className='grid grid-cols-3 place-items-center px-[25px] xl:px-[8%] 2xl:px-[10%]'>
+        <div className='grid grid-cols-3 grid-cols-1 place-items-center px-[25px] xl:px-[8%] 2xl:px-[10%]'>
             <div className='flex flex-col items-center text-center'>
                 <div className='w-16 h-16 p-4 -mb-7 z-[1] bg-white  border-[#c9c8c8] border-[3px] border-solid rounded-full'>
                     <FaTruck className='text-2xl text-[#aeaeae] relative z-[7] -mt-[5px]' />
