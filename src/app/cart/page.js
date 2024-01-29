@@ -26,21 +26,22 @@ const page = () => {
 
 
     const handleCheckout = async () => {
-        if (cartItems.length > 0) {
-            const stripe = await getStripe();
-            const response = await fetch('/api/stripe', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(cartItems)
-            })
-            if (response.statusCode === 500) return;
-            toast.loading('...redirecting')
-            const data = await response.json();
-            stripe.redirectToCheckout({ sessionId: data.session.id })
+        if (cartItems.length == 0) {
+            toast.error('please add product to cart first')
         }
-        toast.error('please add product to cart first')
+        const stripe = await getStripe();
+        const response = await fetch('/api/stripe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(cartItems)
+        })
+        if (response.statusCode === 500) return;
+        toast.loading('...redirecting')
+        const data = await response.json();
+        stripe.redirectToCheckout({ sessionId: data.session.id })
+
     }
 
     return (
