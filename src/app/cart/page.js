@@ -9,19 +9,15 @@ import Link from 'next/link'
 
 const page = () => {
     const dispatch = useDispatch();
-    // const cartItems = useSelector((state) => state.cart)
-    const [cartItems, setCartItems] = useState([])
+    const cartItems = useSelector((state) => state.cart)
     const RemoveFromCart = (id) => {
-        console.log("milgyi" + id)
-        const cartITEM = JSON.parse(localStorage.getItem('cartList'));
-        const updatedCartItems = cartITEM.filter(item => item._id !== id);
-        localStorage.setItem('cartList', JSON.stringify(updatedCartItems));
+        dispatch(removeFromCart(id))
     }
-    useEffect(() => {
-        const existingCartItemsJSON = localStorage.getItem('cartList');
-        const existingCartItems = existingCartItemsJSON ? JSON.parse(existingCartItemsJSON) : [];
-        setCartItems(existingCartItems)
-    }, [cartItems])
+    console.log(cartItems)
+    // useEffect(() => {
+    //     const cart = JSON.parse(localStorage.getItem('cartList'));
+    //     addTo
+    // }, [])
 
     const handleCheckout = async () => {
         const stripe = await getStripe();

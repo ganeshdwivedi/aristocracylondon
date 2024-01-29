@@ -1,12 +1,11 @@
 import React from 'react'
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { FaCheckCircle } from "react-icons/fa";
 
 const OurSuitsInTravels = () => {
     return (
         <div className='xl:px-[8%]  bg-white 2xl:px-[10%] py-10 items-center px-[30px]'>
-            <div class="cayto-title-separator-wrap text-center mb-14 cst-title1 snipcss-KoyvF">
-                <h2 class="cayto-title-separator cayto-title ">
+            <div className="cayto-title-separator-wrap text-center mb-14 cst-title1 snipcss-KoyvF">
+                <h2 className="cayto-title-separator cayto-title ">
                     <span>
                         Our Suits Travel in Style
                     </span>

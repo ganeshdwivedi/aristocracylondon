@@ -3,6 +3,7 @@ import NavbarAfter from '@/components/NavbarAfter'
 import React, { useState } from 'react'
 import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from "react-datepicker";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 const page = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -10,6 +11,12 @@ const page = () => {
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
+    const Data = [{ title: 'Do You accept walk in?', description: 'We don’t accept walk-ins. If you arrive to the showroom without an appointment, we reserve the right to refuse service although we may suggest a suitable appointment slot based on availability.' }, { title: 'How many guest i can bring', description: "You’re welcome to bring up to 2 guests with you. However, if members of your party wish to try on products, we’re not able to extend the appointment slot so please book an additional appointment." }, { title: 'can i buy on the spot', description: 'Yes, you can purchase products on the spot in our showroom and either collect them immediately, subject to availability, or reserve in the showroom, e.g. if you want alterations made' }, { title: 'How long will my appointment last', description: 'Each slot is 1 hour long' }, { title: 'are products available', description: 'All our products are available both via the website and in our showroom.' }, {
+        title: 'Can ireserve items', description: "No, all purchases must be paid in full."
+    }, { title: 'I am getting married ', description: 'All our suits are limited edition so, if you have your heart set on a specific suit from our collection, we suggest you purchase it as soon as possible before it sells out. In terms of alterations for a perfect fit, you can arrange an appointment with our in-house tailoring partner 4-6 weeks before the event.' }, { title: 'I am getting married ', description: 'All our suits are limited edition so, if you have your heart set on a specific suit from our collection, we suggest you purchase it as soon as possible before it sells out. In terms of alterations for a perfect fit, you can arrange an appointment with our in-house tailoring partner 4-6 weeks before the event.' }, { title: 'I am getting married ', description: 'All our suits are limited edition so, if you have your heart set on a specific suit from our collection, we suggest you purchase it as soon as possible before it sells out. In terms of alterations for a perfect fit, you can arrange an appointment with our in-house tailoring partner 4-6 weeks before the event.' }]
+
+    const defaultContent =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
     return (
         <div>
@@ -43,8 +50,17 @@ const page = () => {
 
                     </div>
                 </div>
-
+                <div className=''>
+                    <Accordion className='grid grid-rows-3'>
+                        {Data.map((item, index) => <AccordionItem key={index} aria-label={item.title} title={
+                            <p className='text-sm'>{item.title}</p>
+                        }>
+                            <p className='text-sm text-[#383737]'>{item.description}</p>
+                        </AccordionItem>)}
+                    </Accordion>
+                </div>
             </div>
+
         </div>
     )
 }

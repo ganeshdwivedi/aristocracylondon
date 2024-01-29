@@ -21,9 +21,6 @@ margin: 10px;
 }
 .react-datepicker .react-datepicker__navigation.react-datepicker__navigation--next{
     margin: 10px;
-    border-radius: 50%;
-    background-color: rgb(236, 235, 235);
-    color: #0a1a3c;
 }
 
 .react-datepicker .react-datepicker__day-name{
@@ -66,19 +63,43 @@ font-weight: 400;
     border-radius: 0;
     font-weight: 400;
 }
+
 .ReviewCard::-webkit-scrollbar{
     display: none;
 }
 
 .NAVSHOP:hover :first-child{
-    display: grid;
+    display: flex;
 }
 .NAVSHOP :first-child {
     display: none;
 }
 .NAVSHOP :first-child:hover {
-    display: grid;
+    display: flex;
 }
+
+.okay::before{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #d4bb59;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    border-radius: 100%;
+}
+.okay::after{
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: #d4bb59;
+    margin: 0;
+    bottom: -5px;
+    left: 50%;
+    position: absolute;
+    border-radius: 100%;
+}
+
 
 .NAVFASHION .NAVFASHIONInner:hover{
     display: flex;

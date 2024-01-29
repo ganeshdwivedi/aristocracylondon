@@ -16,14 +16,13 @@ function Navbar() {
     useEffect(() => {
         const handleIsSticky = () => window.scrollY >= 50 ? setIsSticky(true) : setIsSticky(false);
         window.addEventListener('scroll', handleIsSticky);
-        console.log(localStorage.getItem('cartList'))
     }, [isSticky])
 
     const navlinkcss =
         " text-[15px] text-white hover:text-yellow-500 cursor-pointer";
     const mobNavlinkcss =
         "text-[25px] font-medium hover:underline decoration-black decoration-2 underline-offset-8";
-    const listcss = "text-[14px] my-[3px] text-black cursor-pointer"
+    const listcss = "text-[14px] my-[3px] text-black cursor-pointer hover:relative left-1 transition-all linear-ease hover:text-yellow-600"
     return (
         <>
             <nav className="relative">
@@ -35,7 +34,7 @@ function Navbar() {
                         <ul className="flex-row lg:flex hidden items-center gap-x-[40px]">
                             <li className={navlinkcss + "relative py-[10px] lg:py-[40px] h-full cursor-pointer NAVSHOP"}>
                                 Shop
-                                <div className="absolute z-[5] shadow-md overflow-hidden bg-white grid grid-cols-5 place-items-start top-[102px] mx-[25px] xl:mx-[8%] 2xl:mx-[10%] p-5 h-[300px] inset-0">
+                                <div className="absolute z-[5] shadow-md overflow-hidden bg-white flex flex-row justify-around top-[110px] mx-[25px] xl:mx-[8%] 2xl:mx-[10%] py-6 h-[300px] inset-0">
                                     <div className='flex flex-col'>
                                         <h3 className='text-[15px] text-black font-medium '>Suits</h3>
                                         <ul className='flex flex-col gap-y-1'>
@@ -51,16 +50,20 @@ function Navbar() {
                                             </Link>
                                         </ul>
                                     </div>
-                                    <div className="overflow-hidden p-10">
-                                        <Link className="flex flex-col" href={"/shirts"}>
-                                            <p className="text-black">Shirts</p>
-                                            <img className="w-full h-full" src="https://www.aristocracy.london/wp-content/uploads/magictoolbox_cache/8c95d73fec130487c102a73bf1ab42ce/9/4/9425/thumb450x450/859892690/White-Tuxedo-Shirt-with-Hidden-Buttons-3.jpg" alt="" />
+                                    <div className="overflow-hidden">
+                                        <p className="text-black font-medium">Shirts</p>
+                                        <Link className="" href={"/shirts"}>
+                                            <div className="w-[190px] h-[300px] overflow-hidden">
+                                                <img className="w-full h-full object-cover" src="https://www.aristocracy.london/wp-content/uploads/magictoolbox_cache/8c95d73fec130487c102a73bf1ab42ce/9/4/9425/thumb450x450/859892690/White-Tuxedo-Shirt-with-Hidden-Buttons-3.jpg" alt="" />
+                                            </div>
                                         </Link>
                                     </div>
-                                    <div className="overflow-hidden p-10">
-                                        <Link href={"/shoes"} className="flex flex-col items-start">
-                                            <p className="text-black">Shoes</p>
-                                            <img className="w-full h-full" src="https://www.aristocracy.london/wp-content/uploads/magictoolbox_cache/8c95d73fec130487c102a73bf1ab42ce/1/1/11083/thumb450x450/3567802239/Esher-Black-Velvet-Patent-Leather-Shoes-41.jpg" alt="" />
+                                    <div className="overflow-hidden">
+                                        <Link href={"/shoes"} className=" flex flex-col">
+                                            <p className="text-black font-medium">Shoes</p>
+                                            <div className="w-[190px] h-[300px]">
+                                                <img className="object-cover w-full h-full" src="https://www.aristocracy.london/wp-content/uploads/magictoolbox_cache/8c95d73fec130487c102a73bf1ab42ce/1/1/11083/thumb450x450/3567802239/Esher-Black-Velvet-Patent-Leather-Shoes-41.jpg" alt="" />
+                                            </div>
                                         </Link>
                                     </div>
                                     <div>
@@ -93,26 +96,12 @@ function Navbar() {
                                         <p className="text-[15px] text-black font-medium ">Accessories</p>
                                         <ul>
                                             <Link href={"/belts"}>
-                                                <li className={listcss}>Belts</li>
+                                                <li className={listcss}>Boy's Suits</li>
                                             </Link>
-                                            <Link href={"/cummerbunds-and-bow-Ties"}>
-                                                <li className={listcss}>Cummerbunds & Bow Ties</li>
+                                            <Link href={"/belts"}>
+                                                <li className={listcss}>Boy's Shirts</li>
                                             </Link>
-                                            <Link href={"/ties-and-pocket-squares"}>
-                                                <li className={listcss}>Ties & Pocket Squares</li>
-                                            </Link>
-                                            <Link href={"/socks"}>
-                                                <li className={listcss}>Socks</li>
-                                            </Link>
-                                            <Link href={"/pocket-watches"}>
-                                                <li className={listcss}>Pocket Watches</li>
-                                            </Link>
-                                            <Link href={"/card-holders"}>
-                                                <li className={listcss}>Card Holders</li>
-                                            </Link>
-                                            <Link href={"/suit-bags"}>
-                                                <li className={listcss}>Suit Bags</li>
-                                            </Link>
+
                                         </ul>
                                     </div>
                                 </div>
@@ -130,7 +119,7 @@ function Navbar() {
                                 </div>
                             </li>
                             <li className={`${navlinkcss}`}>
-                                <Link href={"/contact"}>
+                                <Link className="okay relative" href={"/contact"}>
                                     Contact Us
                                 </Link>
                             </li>
