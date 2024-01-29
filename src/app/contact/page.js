@@ -4,12 +4,11 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className='py-20'>
-
+        <div className=' pb-20'>
             <NavbarAfter subheading={"We are always hppy to help"} heading={"Contact Us"} />
             <div className='xl:px-[8%] 2xl:px-[10%] px-[25px]'>
                 <p className='py-5 text-[13px] text-slate-600'>If you have any queries, please choose from the options below.</p>
-                <div className='grid grid-cols-2 gap-x-8'>
+                <div className='grid grid-cols-1 md:gap-y-0 gap-y-5 md:grid-cols-2 gap-x-8'>
                     <div className='border p-10 text-center'>
                         <h3 className='text-[18px]'>FAQs</h3>
                         <p>Visit our regularly updated <Link href={"/"} className="underline underline-offset-8 hover:text-yellow-600 decoration-yellow-600">FAQ page.</Link></p>
@@ -23,7 +22,7 @@ const page = () => {
                     <h3 className='text-[20px] text-center'>Submit Your Enquiry</h3>
                     <p className='text-[14px]'>Alternatively, you can complete the form below. To help us deal with your query more efficiently, please select the most relevant subject category and include as many details as possible such as product name, order number etc.</p>
 
-                    <form className='grid grid-cols-2 gap-x-10 mt-10'>
+                    <form className='grid grid-cols-1 md:grid-cols-2 gap-x-10 mt-10'>
                         <div className='flex flex-col gap-y-5'>
                             <div className='flex flex-col'>
                                 <label className='text-[13px] text-slate-600'>First Name</label>

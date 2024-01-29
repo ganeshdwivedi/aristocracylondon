@@ -5,28 +5,35 @@ import ProductCard from './Product/ProductCard'
 import { client } from '../../sanity'
 import urlFor from '../../ImgUrl'
 
-const GetAllProducts = ({ params, type, route }) => {
+const GetAllProducts = ({ params, type, route, props }) => {
     const [product, setProduct] = useState([])
 
     const category = params
+    console.log(category)
+
+    const fine = props ? props.suitType : null
+    const okay = fine ? fine.replaceAll('and', "&") : ""
+    const Suit = okay ? (props.suitType ? `&& suitType == "${okay}"` : "") : ""
+
     const categ = category ? `&& category == "${category}"` : ""
     const sanityGet = async () => {
-        const query = `*[_type == "${type}" ${categ} ]{
+        const query = `*[_type == "${type}" ${categ} ${Suit} ]{
                 title,
                 slug,
-                category,
-                shoeType,
+                suitType,
                 price,
                 description,
                 images,
                 _id,
               }`;
         const products = await client.fetch(query);
+        console.log(products);
         setProduct(products)
     }
     useEffect(() => {
         sanityGet()
-    }, [])
+    }, [props])
+    console.log(product)
 
     return (
         <div className='flex flex-row gap-x-16  mt-20 px-[25px] xl:px-[8%] 2xl:px-[10%]'>
@@ -36,7 +43,7 @@ const GetAllProducts = ({ params, type, route }) => {
                 <hr />
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-5 mt-10'>
                     {
-                        product.map((item) => <ProductCard type={`${route}`} imgsrc={urlFor(item?.images[0])} title={item?.title} slug={item.slug.current} price={item?.price} />)
+                        product.map((item) => <ProductCard type={`${route}`} imgsrc={item.images} title={item?.title} slug={item.slug.current} price={item?.price} />)
                     }
                 </div>
             </div>

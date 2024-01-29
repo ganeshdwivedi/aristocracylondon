@@ -1,3 +1,4 @@
+import AboveNavbar from '@/components/AboveNavbar'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import NewsLetter from '@/components/NewsLetter'
@@ -7,6 +8,7 @@ import React from 'react'
 const layout = ({ children }) => {
     return (
         <div>
+            <AboveNavbar />
             <Navbar />
             {children}
             <TestimonialSlider />

@@ -73,7 +73,7 @@ const FinalProductCard = ({ type, category, link }) => {
                         }
                     }}
                     slidesPerView={3}
-                    spaceBetween={70}
+                    spaceBetween={80}
                     loop={true}
                     onSwiper={(swiper) => setSwiperRef(swiper)}
                     modules={[Pagination, Navigation]}
@@ -81,7 +81,7 @@ const FinalProductCard = ({ type, category, link }) => {
                 >
 
                     {product?.map((item) => <SwiperSlide key={item._id}>
-                        <ProductCard type={link} imgsrc={urlFor(item?.images[0])} title={item?.title} slug={item.slug.current} price={item?.price} /></SwiperSlide>)}
+                        <ProductCard type={link} imgsrc={item?.images} title={item?.title} slug={item.slug.current} price={item?.price} /></SwiperSlide>)}
                 </Swiper>
             </div>
         </div>

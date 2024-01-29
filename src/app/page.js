@@ -1,4 +1,6 @@
+import AboveNavbar from "@/components/AboveNavbar";
 import AllProductslider from "@/components/AllProductslider";
+import BeforeTesimonial from "@/components/BeforeTesimonial";
 import BlogCard from "@/components/Blog/BlogCard";
 import BlogSlider from "@/components/Blog/BlogSlider";
 import FinalBlog from "@/components/Blog/FinalBlog";
@@ -15,10 +17,12 @@ export default function Home() {
   return (
 
     <div className="overflow-hidden">
+      <AboveNavbar />
       <Navbar />
       <Hero />
       <HeroAfter />
       <AllProductslider />
+      <BeforeTesimonial />
       <TestimonialSlider />
       <OurSuitsInTravels />
       <FinalBlog />

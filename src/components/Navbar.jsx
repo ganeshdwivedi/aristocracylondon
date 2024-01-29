@@ -5,7 +5,9 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from "next/link";
 import SearchIc from "@/assets/SearchIcon";
-import CartIcon from "@/assets/CartIcon";
+import { useRouter } from "next/navigation";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
     const [toggle, settoggle] = useState(false);
@@ -13,6 +15,8 @@ function Navbar() {
     const Toggle = () => {
         settoggle(!toggle);
     };
+    const router = useRouter()
+    const CartItems = useSelector((state) => state.cart)
     useEffect(() => {
         const handleIsSticky = () => window.scrollY >= 50 ? setIsSticky(true) : setIsSticky(false);
         window.addEventListener('scroll', handleIsSticky);
@@ -34,17 +38,17 @@ function Navbar() {
                         <ul className="flex-row lg:flex hidden items-center gap-x-[40px]">
                             <li className={navlinkcss + "relative py-[10px] lg:py-[40px] h-full cursor-pointer NAVSHOP"}>
                                 Shop
-                                <div className="absolute z-[5] shadow-md overflow-hidden bg-white flex flex-row justify-around top-[110px] mx-[25px] xl:mx-[8%] 2xl:mx-[10%] py-6 h-[300px] inset-0">
+                                <div className={isSticky ? "absolute z-[5] shadow-md overflow-hidden bg-white flex flex-row justify-around top-[103px] mx-[25px] xl:mx-[8%] 2xl:mx-[10%] py-6 h-[300px] inset-0" : "absolute z-[5] shadow-md overflow-hidden bg-white flex flex-row justify-around top-[110px] mx-[25px] xl:mx-[8%] 2xl:mx-[10%] py-6 h-[300px] inset-0"}>
                                     <div className='flex flex-col'>
                                         <h3 className='text-[15px] text-black font-medium '>Suits</h3>
                                         <ul className='flex flex-col gap-y-1'>
-                                            <li className={listcss}>Wedding Suits</li>
-                                            <li className={listcss}>Tuxedos & Dinner Suits</li>
-                                            <li className={listcss}>Morning Suits & Tailcoats</li>
-                                            <li className={listcss}>Nehru Suits</li>
-                                            <li className={listcss}>Business & Lounge Suits</li>
-                                            <li className={listcss}>Prom Suits</li>
-                                            <li className={listcss}>Graduation Suits</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Wedding Suits`)} className={listcss}>Wedding Suits</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Tuxedos and Dinner Suits`)} className={listcss}>Tuxedos & Dinner Suits</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Morning Suits and Tailcoats`)} className={listcss}>Morning Suits & Tailcoats</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Nehru Suits`)} className={listcss}>Nehru Suits</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Business and Lounge Suits`)} className={listcss}>Business & Lounge Suits</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Prom Suits`)} className={listcss}>Prom Suits</li>
+                                            <li onClick={() => router.replace(`/products/?suitType=Graduation Suits`)} className={listcss}>Graduation Suits</li>
                                             <Link href={"/products"}>
                                                 <li className={listcss}>View All Men’s Suits</li>
                                             </Link>
@@ -114,20 +118,24 @@ function Navbar() {
                             <li className={`${navlinkcss} NAVFASHION relative py-[10px] lg:py-[40px] h-full`}>
                                 The Fashion House
                                 <div className="absolute NAVFASHIONInner z-[5] shadow-md overflow-hidden bg-white  flex-col top-[102px] p-5 w-[200px] h-[100px] inset-0">
-                                    <p className={`${listcss} hover:bg-slate-100`}>Our Story</p>
-                                    <Link href={"/blog"} className={`${listcss} hover:bg-slate-100`}>The Gentlemen's Blog</Link>
+                                    <p className={`${listcss} `}>Our Story</p>
+                                    <Link href={"/blog"} className={`${listcss} `}>The Gentlemen's Blog</Link>
                                 </div>
                             </li>
                             <li className={`${navlinkcss}`}>
-                                <Link className="okay relative" href={"/contact"}>
+                                <Link className=" relative" href={"/contact"}>
                                     Contact Us
                                 </Link>
                             </li>
                         </ul>
                         <div className="flex flex-row items-center gap-x-3 md:gap-x-5">
                             <SearchIc />
-                            <Link href={"/cart"}>
-                                <CartIcon />
+                            <Link className="" href={"/cart"}>
+                                <div className='relative hover:border-yellow-500 hover:text-yellow-500'>
+                                    <button className="border  bg-white  w-8 transition-colors relative ease-linear h-8 rounded-full">
+                                        <ShoppingCartIcon fontSize="small" /></button>
+                                    <p className='absolute w-5 h-5 text-center pt-[2px] -right-2 bg-white rounded-full -top-2 text-xs'>{CartItems.length}</p>
+                                </div>
                             </Link>
                             <button
                                 onClick={Toggle}

@@ -24,8 +24,14 @@ const RelatedBlogs = ({ id }) => {
 
     return (
         <div className='my-20'>
-            <h3 className='text-[20px]'>You Might Also Like</h3>
-            <div className='grid grid-cols-3 my-3'>
+            <div className="cayto-title-separator-wrap text-center mb-14 cst-title1 snipcss-KoyvF">
+                <h2 className="cayto-title-separator cayto-title ">
+                    <span>
+                        Others Also Read
+                    </span>
+                </h2>
+            </div>
+            <div className='grid md:grid-cols-2 gap-5 xl:grid-cols-3 my-3'>
                 {product?.map((item) =>
                     <Link key={item._id} className='md:w-[250px] ' href={`/products/${item.slug.current}`}>
                         <div className='md:w-[250px] md:h-[250px] overflow-hidden relative shadow-black hover:shadow-lg'>

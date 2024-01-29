@@ -30,9 +30,9 @@ const page = ({ params }) => {
 
 
     return (
-        <>
-            {product.map((item) => <div key={item._id} className='xl:px-[8%] 2xl:px-[10%] pt-10 flex gap-x-10 flex-row'>
-                <div className='w-[70vw]'>
+        <div className='px-[25px] xl:px-[8%] 2xl:px-[10%]'>
+            {product.map((item) => <div key={item._id} className='pt-10 flex md:gap-x-10 flex-row'>
+                <div className='md:w-[70vw]'>
                     <div className='overflow-hidden'>
                         <img className='w-full h-full object-cover object-center' src={urlFor(item?.images[0])} alt='' />
                     </div>
@@ -47,7 +47,7 @@ const page = ({ params }) => {
                         <div className='p-2 border-slate-900 border hover:bg-slate-900 hover:text-white transition-colors ease-linear'><FacebookRoundedIcon /></div>  <div className='p-2 border-slate-900 border hover:bg-slate-900 hover:text-white transition-colors ease-linear'><TwitterIcon /> </div> <div className='p-2 border-slate-900 border hover:bg-slate-900 hover:text-white transition-colors ease-linear'><WhatsAppIcon /></div>
                     </div>
                     <div>
-                        <RelatedBlogs />
+                        <RelatedBlogs id={item._id} />
                     </div>
                 </div>
                 <div className='w-[25vw]'>
@@ -55,7 +55,7 @@ const page = ({ params }) => {
                 </div>
             </div>)}
 
-        </>
+        </div>
     )
 }
 
