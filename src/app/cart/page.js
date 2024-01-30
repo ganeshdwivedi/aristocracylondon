@@ -132,12 +132,12 @@ const page = () => {
                 </div>
             </div>
             <Toaster />
-            <div className="flex flex-col my-10 md:flex-row justify-between">
-                <Tabs className={"flex flex-col md:flex-row gap-x-5 border md:w-[50vw] py-5"}>
+            <div className="flex flex-col my-10 lg:flex-row justify-between">
+                <Tabs className={"flex flex-col md:flex-row gap-x-5 border lg:w-[50vw] py-5"}>
                     <TabList className={"flex flex-col"}>
-                        <Tab className={"md:w-[20vw] py-[10px] px-[40px]"}>Delivery & Returns</Tab>
-                        <Tab className={"md:w-[20vw] py-[10px] px-[40px]"}>Gift Cards Or Coupons</Tab>
-                        <Tab className={"md:w-[20vw] py-[10px] px-[40px]"}>Order complimentaries</Tab>
+                        <Tab className={"lg:w-[20vw] py-[10px] px-[40px]"}>Delivery & Returns</Tab>
+                        <Tab className={"lg:w-[20vw] py-[10px] px-[40px]"}>Gift Cards Or Coupons</Tab>
+                        <Tab className={"lg:w-[20vw] py-[10px] px-[40px]"}>Order complimentaries</Tab>
                     </TabList>
 
                     <TabPanel className={"px-5 md:px-3"}>
@@ -156,7 +156,7 @@ const page = () => {
                             <br /> These aren't just our way of thanking you for your custom; each one of our gifts will help you maintain the look and feel of your suit for longer.</p>
                     </TabPanel>
                 </Tabs>
-                <div className='flex flex-col mt-5 md:mt-0 md:w-[30vw] p-2'>
+                <div className='flex flex-col mt-5 md:mt-0 lg:w-[30vw] p-2'>
                     <div className='flex flex-row border items-center justify-between px-1 py-3'>
                         <p className='text-sm text-[#474747]'>Products Subtotal</p>
                         <p>£695.00</p>
