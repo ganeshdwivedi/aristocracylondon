@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import AddBoxIcon from '@mui/icons-material/AddBox';
 
 const page = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -58,15 +59,18 @@ const page = () => {
                 </div>
                 <div className='my-20'>
                     <Accordion selectionMode='multiple' className='grid grid-cols-1 md:grid-cols-6'>
-                        {Data.map((item, index) => <AccordionItem className='lg:w-[25vw]' key={index} aria-label={item.title} title={
+                        {Data.map((item, index) => <AccordionItem className='lg:w-[25vw] text-[#383737]' indicator={<AddBoxIcon className='text-[#383737]' />} key={index} aria-label={item.title} title={
                             <p className='text-sm'>{item.title}</p>
                         }>
                             <p className='text-sm text-[#383737]'>{item.description}</p>
                         </AccordionItem>)}
                     </Accordion>
                 </div>
+                <div className='my-20 p-10 bg-[#f3f2f2]'>
+                    <iframe className='md:h-[300px] xl:h-[400px]' src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14719.413748683992!2d75.84177455!3d22.7336883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1706618210599!5m2!1sen!2sin" width={"100%"} height={"100%"} allowFullScreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <div className=''>
-                    <iframe className='md:h-[400px] xl:h-[700px]' width={"100%"} height={"100%"} src="https://www.youtube.com/embed/mwkwOrZDGRk?autoplay=1&mute=1&loop=1&playlist=mwkwOrZDGRk&loop=1controls=0&modestbranding=1&rel=0&vq=hd1080" allowFullScreen>
+                    <iframe className='md:h-[400px] xl:h-[700px]' width={"100%"} height={"100%"} src="https://www.youtube.com/embed/mwkwOrZDGRk?&loop=1&playlist=mwkwOrZDGRk&loop=1controls=0&modestbranding=1&rel=0&vq=hd1080" allowFullScreen>
                     </iframe>
                 </div>
             </div>
