@@ -40,7 +40,7 @@ const GetAllProducts = ({ params, type, route, props, searchParams }) => {
                 <hr />
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-5 mt-10'>
                     {
-                        product.map((item) => <ProductCard item={item} Category={item.category} type={`${route}`} imgsrc={item.images} title={item?.title} slug={item.slug.current} price={item?.price} />)
+                        product.map((item) => <ProductCard item={item} Category={item.category} type={`${route}`} imgsrc={item.images} title={item?.title} slug={item.slug} price={item?.price} />)
                     }
                 </div>
             </div>
