@@ -8,6 +8,8 @@ import SearchIc from "@/assets/SearchIcon";
 import { useRouter } from "next/navigation";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector } from 'react-redux';
+import { Accordion, AccordionItem } from "@nextui-org/react";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Navbar() {
     const [toggle, settoggle] = useState(false);
@@ -27,8 +29,11 @@ function Navbar() {
     const navlinkcss =
         " text-[15px] text-white hover:text-yellow-500 cursor-pointer";
     const mobNavlinkcss =
-        "text-[25px] font-medium hover:underline decoration-black decoration-2 underline-offset-8";
+        "text-[16px] font-medium text-white hover:underline decoration-black decoration-2 underline-offset-8";
     const listcss = "text-[14px] my-[3px] text-black cursor-pointer hover:relative left-1 transition-all linear-ease hover:text-yellow-600"
+
+    const defaultContent =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
     return (
         <>
             <nav className="relative">
@@ -163,38 +168,109 @@ function Navbar() {
             </nav>
             {toggle && (
                 <div
-                    className="p-10 z-50 pl-10 fixed duration-1000 delay-300 ease-in-out pt-36 bg-white w-[100vw] h-[100vh]"
+                    className="p-5 z-50 right-5 fixed duration-1000 delay-300 ease-in-out bg-black"
                 >
                     <div className="">
                         <div className="lg:hidden block">
-                            <ul className="flex flex-col gap-4">
-                                <li className={mobNavlinkcss}>
-                                    <Link href={"/products"}>
-                                        Shop
-                                    </Link>
-                                </li>
-                                <li className={mobNavlinkcss}>
+                            <Accordion>
+                                <AccordionItem className="text-white" key="Shop" aria-label="Shop" indicator={<ArrowDropDownIcon />} title={
+                                    <p className={mobNavlinkcss}>Shop</p>
+                                }>
+                                    <Accordion className="bg-white">
+                                        <AccordionItem className="" key="Suit" aria-label="Suit" indicator={<ArrowDropDownIcon />} title={
+                                            <p className={"text-sm"}>Suit</p>
+                                        }>
+                                            <div className="text-black">
+                                                <ul className='flex flex-col gap-y-2 mt-5'>
+                                                    <li onClick={() => router.replace(`/products/?suitType=Wedding Suits`)} className={listcss}>Wedding Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Tuxedos and Dinner Suits`)} className={listcss}>Tuxedos & Dinner Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Morning Suits and Tailcoats`)} className={listcss}>Morning Suits & Tailcoats</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Nehru Suits`)} className={listcss}>Nehru Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Business and Lounge Suits`)} className={listcss}>Business & Lounge Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Prom Suits`)} className={listcss}>Prom Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Graduation Suits`)} className={listcss}>Graduation Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Race Day Suits`)} className={listcss}>Race Day Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=Funeral Suits`)} className={listcss}>Funeral Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products/?suitType=3 Piece Suits`)} className={listcss}>3 Piece Suits</li>
+                                                    <hr />
+                                                    <li onClick={() => router.replace(`/products`)} className={listcss}>View All Men’s Suits</li>
+                                                    <hr />
+                                                </ul>
+                                            </div>
+                                        </AccordionItem>
+                                        <AccordionItem className="text-white" key="Shirt" aria-label="Shirt" indicator={<ArrowDropDownIcon />} title={
+                                            <p className={"text-sm"}>Shirt</p>
+                                        }>
+                                            <Link href={"/shirts"} className=""><img className="w-20 h-20" src="https://cdn.sanity.io/images/4fxtm919/production/576d88fbcd60f3fc0de900a1f9bf767831085043-450x450.jpg" alt="" /></Link>
+                                        </AccordionItem>
+                                        <AccordionItem className="text-white" key="Shoes" aria-label="Shoes" indicator={<ArrowDropDownIcon />} title={
+                                            <p className={"text-sm"}>Shoes</p>
+                                        }>
+                                            <Link href={"/shoes"} className=""><img className=" h-20" src="https://cdn.sanity.io/images/4fxtm919/production/14a9498ee1d06260ffe170c3c1747d423f4698ed-1200x1200.jpg" alt="" /></Link>
+                                        </AccordionItem>
+                                        <AccordionItem className="text-white" key="Accessories" aria-label="Accessories" indicator={<ArrowDropDownIcon />} title={
+                                            <p className={"text-sm"}>Accessories</p>
+                                        }>
+                                            <ul className='flex text-black flex-col gap-y-2 mt-5'>
+                                                <Link href={"/belts"}><li className={listcss}>Belts</li></Link>
+                                                <hr />
+                                                <Link href={"/cummerbunds-and-bow-Ties"}><li className={listcss}>Cummerbunds & Bow Ties</li></Link>
+                                                <hr />
+                                                <Link href={"/ties-and-pocket-squares"}><li className={listcss}>Ties & Pocket</li></Link>
+                                                <hr />
+                                                <Link href={"/squares"}><li className={listcss}>Squares</li></Link>
+                                                <hr />
+                                                <Link href={"/socks"}><li className={listcss}>Socks</li></Link>
+                                                <hr />
+                                                <Link href={"/pocket-watches"}><li className={listcss}>Pocket Watches</li></Link>
+                                                <hr />
+                                                <Link href={"/card-Holders"}><li className={listcss}>Card Holders</li></Link>
+                                                <hr />
+                                                <Link href={"/suit-Bags"}><li className={listcss}>Suit Bags</li></Link>
+                                                <hr />
+                                            </ul>
+                                        </AccordionItem>
+                                        <AccordionItem className="text-white" key="Children" aria-label="Children" indicator={<ArrowDropDownIcon />} title={
+                                            <p className={"text-sm"}>Children</p>
+                                        }>
+                                            <div className=""></div>
+                                        </AccordionItem>
+                                    </Accordion>
+                                </AccordionItem>
+
+                                <AccordionItem className="text-white" key="Appointment" aria-label="Appointment" indicator="" title={
                                     <Link href={"/appointment"}>
-                                        Appointment
+                                        <p className={mobNavlinkcss}>Appointment</p>
                                     </Link>
-                                </li>
-                                <li className={`${mobNavlinkcss}`}>
-                                    About Us
-                                </li>
-                                <li className={`${mobNavlinkcss}`}>
+                                }>
+                                </AccordionItem>
+
+                                <AccordionItem className="text-white" key="The Fashion House" aria-label="The Fashion House" indicator="" title={
+                                    <p className={mobNavlinkcss}>The Fashion House</p>
+                                }>
+                                </AccordionItem>
+                                <AccordionItem className="text-white" key="Contact Us" aria-label="Contact Us" indicator="" title={
                                     <Link href={"/contact"}>
-                                        Contact Us
+                                        <p className={mobNavlinkcss}>Contact Us</p>
                                     </Link>
-                                </li>
-                                <li>
-                                </li>
-                            </ul>
+                                }>
+                                </AccordionItem>
+                            </Accordion>
                         </div>
 
 
                     </div >
 
-                </ div>
+                </ div >
             )
             }
         </>
