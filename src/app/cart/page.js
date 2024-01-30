@@ -63,6 +63,38 @@ const page = () => {
                 </div>
                 <div className='my-10'>
                     <table className='w-full h-full'>
+
+                        {
+                            cartItems.map((item) => <thead className='grid grid-cols-1 md:hidden border '>
+                                <tr className='md:col-span-4 py-5'>
+                                    <th className='text-base pl-3 font-normal text-slate-600'>Product</th>
+                                    <td className='md:col-span-4 md:hidden block border p-5'>
+                                        <div className='flex gap-x-4 flex-row items-center'>
+                                            <img className='w-20' src={urlFor(item?.images[0])} alt={item?.title} />
+                                            <div>
+                                                <p className='text-[14px]'>{item?.title}</p>
+                                                <button className='text-xs mt-4 hover:text-yellow-600 flex flex-row gap-x-2 transition-colors ease-linear' onClick={() => RemoveFromCart(item?._id)}><RxCross1 /> Remove Item</button>
+                                                <button className='text-xs hover:text-yellow-600 flex flex-row gap-x-2 transition-colors ease-linear'><FaHeart /> Add to Wishlist</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr className='md:col-span-2 border py-5'>
+                                    <th className='text-base pl-3 font-normal text-slate-600'>Options</th>
+                                    <td className='md:col-span-2 md:hidden block p-5 text-sm text-[#676666]' >Size: 43</td>
+
+                                </tr>
+                                <tr className='md:col-span-2  border py-5'>
+                                    <th className='text-base pl-3 font-normal text-slate-600'>Quantity</th>
+                                    <td className='md:col-span-2 md:hidden  p-5  text-[#676666] text-sm'>1</td>
+                                </tr>
+                                <tr className='md:col-span-2 border py-5'>
+                                    <th className='text-base pl-3 font-normal text-slate-600'>Price</th>
+                                    <td className='md:col-span-2 md:hidden  p-5  text-[#676666] text-sm'>£{item.price}</td>
+                                </tr>
+                            </thead>)
+
+                        }
                         <thead className='grid grid-cols-1 md:grid-cols-10 border '>
                             <tr className='md:col-span-4 border py-5'>
                                 <th className='text-base pl-3 font-normal text-slate-600'>Product</th>
@@ -77,9 +109,10 @@ const page = () => {
                                 <th className='text-base pl-3 font-normal text-slate-600'>Price</th>
                             </tr>
                         </thead>
+
                         {
                             cartItems.map((item) =>
-                                <tbody className='grid grid-cols-10  border '>
+                                <tbody className='hidden md:grid grid-cols-10  border '>
                                     <tr className='md:col-span-4 border p-5'>
                                         <div className='flex gap-x-4 flex-row items-center'>
                                             <img className='w-20' src={urlFor(item?.images[0])} alt={item?.title} />
@@ -99,15 +132,15 @@ const page = () => {
                 </div>
             </div>
             <Toaster />
-            <div className="my-52 ">
-                <Tabs className={"flex flex-row"}>
+            <div className="flex flex-col my-10 md:flex-row justify-between">
+                <Tabs className={"flex flex-col md:flex-row gap-x-5 border md:w-[50vw] py-5"}>
                     <TabList className={"flex flex-col"}>
-                        <Tab className={"w-[]"}>Title 1</Tab>
-                        <Tab>Title 2</Tab>
-                        <Tab>Title 3</Tab>
+                        <Tab className={"md:w-[20vw] py-[10px] px-[40px]"}>Delivery & Returns</Tab>
+                        <Tab className={"md:w-[20vw] py-[10px] px-[40px]"}>Gift Cards Or Coupons</Tab>
+                        <Tab className={"md:w-[20vw] py-[10px] px-[40px]"}>Order complimentaries</Tab>
                     </TabList>
 
-                    <TabPanel>
+                    <TabPanel className={"px-5 md:px-3"}>
                         <p className='text-sm text-[#434242]'>Free delivery over £80, within 2-5 working days, anywhere in the UK. In-store collection also available upon request.</p><br />
                         <p className='text-sm text-[#434242]'>Estimated delivery: Thu 01 Feb 2024 - Tue 06 Feb 2024.</p><br />
                         <p className='text-sm text-[#434242] underline underline-offset-4 decoration-yellow-600'>Delivery policy</p><br />
@@ -115,13 +148,33 @@ const page = () => {
                             We accept refund or exchange requests up to 30 days from the date of purchase. One free exchange request per order.</p>
                         <p className='text-sm text-[#434242] underline underline-offset-4 decoration-yellow-600'>Returns & Refunds Policy</p>
                     </TabPanel>
-                    <TabPanel>
+                    <TabPanel className={"px-5 md:px-3"}>
                         <p className='text-sm text-[#434242]'>Please note that you can only redeem one promotional offer per transaction. If you have any problems or queries, please click here.</p>
                     </TabPanel>
-                    <TabPanel>
-                        <p className='text-sm text-[#434242]'> Every suit comes with three carefully curated complimentaries. These aren't just our way of thanking you for your custom; each one of our gifts will help you maintain the look and feel of your suit for longer.</p>
+                    <TabPanel className={"px-5 md:px-3"}>
+                        <p className='text-sm text-[#434242]'> Every suit comes with three carefully curated complimentaries.
+                            <br /> These aren't just our way of thanking you for your custom; each one of our gifts will help you maintain the look and feel of your suit for longer.</p>
                     </TabPanel>
                 </Tabs>
+                <div className='flex flex-col mt-5 md:mt-0 md:w-[30vw] p-2'>
+                    <div className='flex flex-row border items-center justify-between px-1 py-3'>
+                        <p className='text-sm text-[#474747]'>Products Subtotal</p>
+                        <p>£695.00</p>
+                    </div>
+                    <div className='flex flex-row border items-center justify-between px-1 py-3'>
+                        <p className='text-sm text-[#474747]'>Delivery <br />
+                            Thu 01 Feb 2024 - Tue 06 Feb 2024</p>
+                        <p>£0.00</p>
+                    </div>
+                    <div className='flex flex-row border items-center justify-between px-1 py-3'>
+                        <p className='text-xl text-[#474747]'>Total</p>
+                        <p>£695.00</p>
+                    </div>
+                    <div className='flex px-2 flex-row justify-between items-center md:my-3 mt-5 md:gap-x-10'>
+                        <Link href={"/products"} className='capitalize text-[14px] bg-white text-[#0a1a3c] px-3 md:px-7 py-2 border border-[#0a1a3c] transition-colors ease-linear hover:text-white hover:bg-[#0a1a3c]'>Continue Shopping</Link>
+                        <button onClick={handleCheckout} className='capitalize text-[14px] border-[#0a1a3c] border hover:border-[#d4bb59] bg-[#0a1a3c] text-white px-3 md:px-7 py-2 transition-colors ease-linear flex flex-row items-center gap-x-3 hover:bg-[#d4bb59]'><FaLock /> Checkout</button>
+                    </div>
+                </div>
             </div>
 
         </div >
