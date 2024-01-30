@@ -43,7 +43,7 @@ const SearchingProducts = ({ params, route, props, searchParams }) => {
                 {
                     product.length > 0 ? <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-5 mt-10'>
                         {
-                            product.map((item) => <ProductCard key={item._id} price={item.price} slug={item.slug} suitType={item.suitType} Category={item.category} type={`${route}`} imgsrc={item.images} />)
+                            product.map((item) => <ProductCard key={item._id} price={item.price} slug={item.slug} title={item?.title} suitType={item.suitType} Category={item.category} type={`${route}`} imgsrc={item.images} />)
                         }
                     </div> : <h3 className='text-lg text-black my-10'>There is no such products</h3>
                 }
