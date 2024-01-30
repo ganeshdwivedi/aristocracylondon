@@ -6,7 +6,7 @@ import { FaHeart } from "react-icons/fa";
 import { ImLoop } from "react-icons/im";
 import { FaEye } from "react-icons/fa";
 
-const ProductCard = ({ title, price, category, slug, suitType, imgsrc }) => {
+const ProductCard = ({ title, price, Category, slug, suitType, imgsrc }) => {
     const [thumbnail, setThumbnail] = useState(null);
     const [toggle, setToggle] = useState(false)
     const changeImage = () => {
@@ -22,7 +22,7 @@ const ProductCard = ({ title, price, category, slug, suitType, imgsrc }) => {
         setToggle(false)
     }
     // if suittype there redirect to products and then category / and slug
-    const RedirectBuilding = suitType ? `products` : category
+    const RedirectBuilding = suitType ? `products` : Category
 
     return (
         <>
