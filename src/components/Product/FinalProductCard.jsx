@@ -29,7 +29,7 @@ const FinalProductCard = ({ type, category, link }) => {
                 title,
                 slug,
                 category,
-                shoeType,
+                 suitType,
                 price,
                 description,
                 images,
@@ -37,6 +37,7 @@ const FinalProductCard = ({ type, category, link }) => {
               }`;
         const products = await client.fetch(query);
         setProduct(products)
+        console.log(products)
     }
     useEffect(() => {
         sanityGet()
@@ -81,7 +82,7 @@ const FinalProductCard = ({ type, category, link }) => {
                 >
 
                     {product?.map((item) => <SwiperSlide key={item._id}>
-                        <ProductCard type={link} imgsrc={item?.images} title={item?.title} slug={item.slug.current} price={item?.price} /></SwiperSlide>)}
+                        <ProductCard suitType={item?.suitType} Category={item.category} imgsrc={item?.images} title={item?.title} slug={item.slug} price={item?.price} /></SwiperSlide>)}
                 </Swiper>
             </div>
         </div>
