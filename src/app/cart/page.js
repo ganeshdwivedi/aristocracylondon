@@ -95,7 +95,7 @@ const page = () => {
                             </thead>)
 
                         }
-                        <thead className='grid grid-cols-1 md:grid-cols-10 border '>
+                        <thead className='grid-cols-1 hidden md:grid md:grid-cols-10 border '>
                             <tr className='md:col-span-4 border py-5'>
                                 <th className='text-base pl-3 font-normal text-slate-600'>Product</th>
                             </tr>
