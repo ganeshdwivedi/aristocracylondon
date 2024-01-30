@@ -33,7 +33,7 @@ const RelatedBlogs = ({ id }) => {
             </div>
             <div className='grid md:grid-cols-2 gap-5 xl:grid-cols-3 my-3'>
                 {product?.map((item) =>
-                    <Link key={item._id} className='md:w-[250px] ' href={`/products/${item.slug.current}`}>
+                    <Link key={item._id} className='md:w-[250px] ' href={`/blog/${item.slug.current}`}>
                         <div className='md:w-[250px] md:h-[250px] overflow-hidden relative shadow-black hover:shadow-lg'>
                             <img className='w-full h-full object-center object-cover' src={urlFor(item.images[0])} alt={item.title} />
                         </div>
