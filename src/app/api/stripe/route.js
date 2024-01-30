@@ -4,7 +4,7 @@ const stripe = new Stripe('sk_test_51OMDnwSAmOoZPtXBvsFTKa8GE5r30fhT97gnvyC5aFPC
 
 import { NextResponse } from 'next/server';
 
-const MY_URL = "http://localhost:3000/"
+const MY_URL = "https://aristocracylondon.vercel.app/"
 
 export async function POST(req) {
     const CompleteProduct = await req.json();
