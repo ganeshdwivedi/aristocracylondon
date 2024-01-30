@@ -5,8 +5,8 @@ import Link from 'next/link';
 const BlogCard = ({ imgsrc, title, description, slug }) => {
     return (
         <Link href={`/blog/${slug}`}>
-            <div className='xl:w-[350px] lg:w-[300px] md:w-[250px] h-full bg-white overflow-hidden'>
-                <div className='relative  lg:w-[300px] md:w-[250px] xl:w-[350px] hover:scale-125 transition-transform'>
+            <div className='xl:w-[350px] lg:w-[300px] h-full bg-white overflow-hidden'>
+                <div className='relative  lg:w-[300px] xl:w-[350px] hover:scale-125 transition-transform'>
                     <img className='w-full h-full object-cover' src={imgsrc} alt='' />
                     <div className='inset-0 absolute hover:bg-white hover:bg-opacity-30'></div>
                 </div>

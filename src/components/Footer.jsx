@@ -8,8 +8,8 @@ const Footer = () => {
 
     const footerLinkCss = 'transition-all ease-linear cursor-pointer  hover:relative hover:left-1 text-[15px] my-3 text-slate-500'
     return (
-        <div className='flex bg-white flex-col xl:px-[8%] 2xl:px-[10%] px-[25px] py-[50px]'>
-            <div className='grid md:grid-cols-3 lg:grid-cols-5 place-items-center'>
+        <div className='flex bg-[#f7f6f7] flex-col '>
+            <div className='grid md:grid-cols-3 xl:px-[8%] 2xl:px-[10%] px-[25px] lg:grid-cols-5 place-items-center py-[50px]'>
                 <div className='text-center md:text-left my-5 md:my-0'>
                     <h3 className='text-[18px] mb-5'>Awards</h3>
                     <div className='grid grid-cols-3 gap-x-2'> <img src='https://www.aristocracy.london/wp-content/uploads/2024/01/London-Design-Awards-2023.png' alt='London award' />
@@ -66,6 +66,9 @@ const Footer = () => {
                         <div className='flex flex-row items-center gap-x-5 my-2'><FaPhoneAlt className='text-slate-700' /><p className='text-[15px] text-slate-500 my-2'>020 3719 4525</p></div>
                     </div>
                 </div>
+            </div>
+            <div className='flex flex-col gap-y-5 md:flex-row items-center justify-between md:grid-cols-2 py-7 xl:px-[8%] 2xl:px-[10%] px-[25px] bg-white'><p className='text-[#505050] text-sm md:text-left text-center'>@2024 Aristocracy London Ltd. Registration No 11300744 VAT No 386595142.</p>
+                <img className='hover:opacity-100 opacity-70 h-[20px]' src='https://www.aristocracy.london/wp-content/uploads/2018/09/accept-logos.png' />
             </div>
         </div>
     )

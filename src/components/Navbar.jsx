@@ -11,7 +11,9 @@ import { useSelector } from 'react-redux';
 
 function Navbar() {
     const [toggle, settoggle] = useState(false);
+    const [toggleSearch, setToggleSeach] = useState(false)
     const [isSticky, setIsSticky] = useState(false);
+    const [searchValue, setSearchValue] = useState("")
     const Toggle = () => {
         settoggle(!toggle);
     };
@@ -34,6 +36,15 @@ function Navbar() {
                     <Link href={"/"}>
                         <Logo className={"md:h-[60px] md:w-full w-36"} />
                     </Link>
+                    {
+                        toggleSearch ? <div className="bg-white left-0 top-0 w-[100%] absolute z-10 h-28">
+                            <form className="flex px-[5vw] flex-row items-center" onSubmit={(e) => e.preventDefault()}>
+                                <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className="w-[90vw] px-[3vw] h-20 text-xl" type="search" placeholder="Search" />
+                                <button onClick={() => router.replace(`/search?query=${searchValue}`)} type="submit"></button>
+                                <button onClick={() => setToggleSeach(false)}><CloseIcon /></button>
+                            </form>
+                        </div> : ""
+                    }
                     <div className="flex-row flex h-full gap-x-5">
                         <ul className="flex-row lg:flex hidden items-center gap-x-[40px]">
                             <li className={navlinkcss + "relative py-[10px] lg:py-[40px] h-full cursor-pointer NAVSHOP"}>
@@ -129,7 +140,9 @@ function Navbar() {
                             </li>
                         </ul>
                         <div className="flex flex-row items-center gap-x-3 md:gap-x-5">
-                            <SearchIc />
+                            <div onClick={() => setToggleSeach(!toggle)}>
+                                <SearchIc />
+                            </div>
                             <Link className="" href={"/cart"}>
                                 <div className='relative hover:border-yellow-500 hover:text-yellow-500'>
                                     <button className="border  bg-white  w-8 transition-colors relative ease-linear h-8 rounded-full">

@@ -11,6 +11,8 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import { FaLock } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const page = () => {
     const dispatch = useDispatch();
@@ -18,12 +20,10 @@ const page = () => {
     const RemoveFromCart = (id) => {
         dispatch(removeFromCart(id))
     }
-    console.log(cartItems)
     // useEffect(() => {
     //     const cart = JSON.parse(localStorage.getItem('cartList'));
     //     addTo
     // }, [])
-
 
     const handleCheckout = async () => {
         if (cartItems.length == 0) {
@@ -99,6 +99,30 @@ const page = () => {
                 </div>
             </div>
             <Toaster />
+            <div className="my-52 ">
+                <Tabs className={"flex flex-row"}>
+                    <TabList className={"flex flex-col"}>
+                        <Tab className={"w-[]"}>Title 1</Tab>
+                        <Tab>Title 2</Tab>
+                        <Tab>Title 3</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <p className='text-sm text-[#434242]'>Free delivery over £80, within 2-5 working days, anywhere in the UK. In-store collection also available upon request.</p><br />
+                        <p className='text-sm text-[#434242]'>Estimated delivery: Thu 01 Feb 2024 - Tue 06 Feb 2024.</p><br />
+                        <p className='text-sm text-[#434242] underline underline-offset-4 decoration-yellow-600'>Delivery policy</p><br />
+                        <p className='text-sm text-[#434242]'>
+                            We accept refund or exchange requests up to 30 days from the date of purchase. One free exchange request per order.</p>
+                        <p className='text-sm text-[#434242] underline underline-offset-4 decoration-yellow-600'>Returns & Refunds Policy</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p className='text-sm text-[#434242]'>Please note that you can only redeem one promotional offer per transaction. If you have any problems or queries, please click here.</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p className='text-sm text-[#434242]'> Every suit comes with three carefully curated complimentaries. These aren't just our way of thanking you for your custom; each one of our gifts will help you maintain the look and feel of your suit for longer.</p>
+                    </TabPanel>
+                </Tabs>
+            </div>
 
         </div >
     )

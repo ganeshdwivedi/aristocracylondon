@@ -6,7 +6,7 @@ const SideBar = () => {
     const router = useRouter()
     const listcss = "text-[14px] text-[#5f5f5f] cursor-pointer"
     return (
-        <div className='w-[16vw] md:block hidden'>
+        <div className='xl:w-[16vw] md:w-[25vw] md:block hidden'>
             <div className='flex flex-col'>
                 <h3 className='text-[20px] font-medium'>Suits</h3>
                 <ul className='flex flex-col gap-y-2 mt-5'>
@@ -45,15 +45,15 @@ const SideBar = () => {
                     <hr />
                     <Link href={"/belts"}><li className={listcss}>Belts</li></Link>
                     <hr />
-                    <Link href={"/cummerbunds-and-Bow-Ties"}><li className={listcss}>Cummerbunds & Bow Ties</li></Link>
+                    <Link href={"/cummerbunds-and-bow-Ties"}><li className={listcss}>Cummerbunds & Bow Ties</li></Link>
                     <hr />
-                    <Link href={"/ties-and-Pocket"}><li className={listcss}>Ties & Pocket</li></Link>
+                    <Link href={"/ties-and-pocket-squares"}><li className={listcss}>Ties & Pocket</li></Link>
                     <hr />
                     <Link href={"/squares"}><li className={listcss}>Squares</li></Link>
                     <hr />
                     <Link href={"/socks"}><li className={listcss}>Socks</li></Link>
                     <hr />
-                    <Link href={"/pocket-Watches"}><li className={listcss}>Pocket Watches</li></Link>
+                    <Link href={"/pocket-watches"}><li className={listcss}>Pocket Watches</li></Link>
                     <hr />
                     <Link href={"/card-Holders"}><li className={listcss}>Card Holders</li></Link>
                     <hr />

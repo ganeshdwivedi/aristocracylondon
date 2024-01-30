@@ -5,7 +5,6 @@ import React from 'react'
 const page = ({ params }) => {
     const slug = params.slug
     const okay = slug.replaceAll('and', "&").replaceAll('-', " ")
-    console.log(okay)
     return (
         <div>
             <NavbarAfter heading={okay} subheading={"The perfect match for our suits"} />

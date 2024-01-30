@@ -232,3 +232,18 @@ h2 {
 .BlogSLIDER .BlogSLIDERNAV:hover {
     display: flex;
 }
+.TABS :first-child :first-child{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.react-tabs__tab--selected{
+    background-color: #0a1a3c !important;
+    color: white !important;
+    padding: 10px 40px;
+}
+.react-tabs__tab{
+    border: 1px solid #ecebeb;
+    padding: 10px 40px;
+    
+}

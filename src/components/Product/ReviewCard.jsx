@@ -15,6 +15,7 @@ const ReviewCard = ({ params, type }) => {
     const [product, setProduct] = useState([])
     const [images, setImages] = useState([]);
     const [thumbnail, setThumbnail] = useState(null);
+    const [zoom, setZoom] = useState(false);
     const dispatch = useDispatch()
     const sanityGet = async () => {
         const query = `*[_type == "${type}" && slug.current == "${params}" ]{
@@ -42,6 +43,10 @@ const ReviewCard = ({ params, type }) => {
         localStorage.setItem('cartList', JSON.stringify(before));
     }
 
+    const ZoomImage = () => {
+
+    }
+
     const handleCheckout = async () => {
         const stripe = await getStripe();
         const response = await fetch('/api/stripe', {
@@ -64,7 +69,7 @@ const ReviewCard = ({ params, type }) => {
                     <div className='flex flex-col'>
                         <div className='flex flex-col md:flex-row gap-x-5'>
                             <div className='lg:w-[30vw] w-full overflow-hidden'>
-                                <div className='lg:w-[30vw] w-full overflow-hidden'>
+                                <div onMouseOver={ZoomImage} className='lg:w-[30vw] w-full overflow-hidden'>
                                     <img className='w-full h-ful object-cover object-center' src={urlFor(thumbnail ? thumbnail : product.images[0])} alt='' />
                                 </div>
                                 <div className='flex flex-row my-3 pl-10 ReviewCard justify-center overflow-x-scroll items-center gap-x-3'>
