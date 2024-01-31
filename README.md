@@ -1,6 +1,6 @@
 ## Nextjs Ecommerce application with stripe Integration
 
-see live demo [link]('https://aristocracylondon.vercel.app/')
+see live demo (Link)['https://aristocracylondon.vercel.app/']
 
 #### Technologies used
 ##### Next js
